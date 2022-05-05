@@ -6,11 +6,23 @@ import { AppComponent } from './app.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './includes/footer/footer.component';
+import { NavComponent } from './includes/nav/nav.component';
+import { AuthComponent } from './auth/auth.component';
+import { IncludesComponent } from './includes/includes.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { LoginComponent } from './auth/login/login.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IncludesComponent,
+    AuthComponent,
+    FooterComponent,
+    NavComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
