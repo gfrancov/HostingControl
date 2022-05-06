@@ -19337,7 +19337,7 @@ fieldset:disabled .btn {
 
 .btn-nebula,
 .btn.bg-gradient-nebula {
-  color: #fff;
+  color: #fff !important;
 }
 
 .btn-nebula:hover,
@@ -20137,7 +20137,7 @@ label,
 }
 
 .bg-gradient-nebula {
-  background-image: linear-gradient(10deg, #ff0099, #493240);
+  background-image: linear-gradient(10deg, #ff0099, #493240) !important;
 }
 
 .bg-gradient-faded-primary {
@@ -23311,7 +23311,7 @@ p {
 }
 
 .text-gradient.text-nebula {
-  background-image: linear-gradient(10deg, #ff0099, #493240);
+  background-image: linear-gradient(10deg, #ff0099, #493240) !important;
 }
 
 .blockquote {
@@ -23391,7 +23391,7 @@ p {
   border: 0;
   font-size: 14px;
   line-height: 24px;
-  border-radius: 5px;
+  border-radius: 1rem;
   position: absolute;
   width: 307.875px;
   -webkit-box-sizing: border-box;

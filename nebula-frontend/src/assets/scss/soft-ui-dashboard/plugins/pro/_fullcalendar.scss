@@ -1406,7 +1406,7 @@ A VERTICAL event
     height: 0;
     border: 5px solid #3788d8;
     border: calc(var(--fc-list-event-dot-width, 10px) / 2) solid var(--fc-event-border-color, #3788d8);
-    border-radius: 5px;
+    border-radius: 1rem;
     border-radius: calc(var(--fc-list-event-dot-width, 10px) / 2);
   }
 .fc {
