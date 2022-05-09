@@ -32,10 +32,21 @@ class RegisterRequest extends FormRequest
         ];
     }
 
+    public function messages() {
+        return [
+            'name.required' => 'Introduce tu nombre.',
+            'password.required' => 'Introduce una contraseña.',
+            'password.min:5' => 'Tu contraseña debe tener más de 5 carácteres',
+            'email.required' => 'Introduce un correo electrónico.',
+            'email.email' => 'Introduce un correo electrónico válido.',
+            'email.unique' => 'Ese correo electrónico ya está en uso.'
+        ];
+    }
+
     public function failedValidation(Validator $validator) {
         throw new HttpResponseException(response()->json([
             'status' => 'error',
-            'message' => 'Validation error',
+            'message' => 'Error',
             'data' => $validator->errors()
         ]));
     }

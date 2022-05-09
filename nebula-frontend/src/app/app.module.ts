@@ -12,6 +12,8 @@ import { AuthComponent } from './auth/auth.component';
 import { IncludesComponent } from './includes/includes.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './dashboard/home/home.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { LoginComponent } from './auth/login/login.component';
     FooterComponent,
     NavComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -14,25 +14,20 @@ class UserController extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
 
-        if($name == 'gabi') {
-            return response()->json([
-                'status' => 'success',
-                'data' => $request->all()
-            ]);
-        } else {
-            return response()->json([
-                'status' => 'error',
-                'data' => $request->all()
-            ]);
-        }
+        User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => password_hash($request->input('password'), PASSWORD_DEFAULT)
+        ]);
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $request->all()
+        ]);
 
     }
 
     public function loginUser(Request $request) {
-
-        /*  $validator = Validator::make($request->all(), [
-             'name' => 'required'
-         ]); */
  
          $email = $request->input('email');
          $password = $request->input('password');
