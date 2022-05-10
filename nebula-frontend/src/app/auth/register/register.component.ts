@@ -24,8 +24,6 @@ export class RegisterComponent {
       
       (res: any) => {
 
-        console.log(res);
-
         if(res.status == 'success') {
 
           Swal.fire({
