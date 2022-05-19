@@ -51,9 +51,9 @@ export class LoginComponent implements OnInit {
 
         } else {
 
-          console.log(res.data.token);
+          console.log(res.data);
           localStorage.setItem('token', res.data.token);
-          localStorage.setItem('userData', res.data);
+          localStorage.setItem('userData', JSON.stringify(res.data));
 
           Swal.fire({
             position: 'center',
