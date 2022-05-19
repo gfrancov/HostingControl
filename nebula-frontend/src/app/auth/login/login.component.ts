@@ -63,6 +63,8 @@ export class LoginComponent implements OnInit {
             showConfirmButton: true,
             confirmButtonColor: '#7ea966',
             confirmButtonText: 'Iniciar sesión'
+          }).then(function() {
+            window.location.href = "/home";
           });
 
         }
@@ -85,7 +87,7 @@ export class LoginComponent implements OnInit {
         confirmButtonText: 'Acceder'
       }).then(function() {
         window.location.href = "/home";
-      });;
+      });
     }
   }
 

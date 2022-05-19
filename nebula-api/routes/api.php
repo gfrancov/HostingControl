@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\Producto;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
+// User paths
 Route::post('register', [App\Http\Controllers\UserController::class, 'registerUser'])->name('register');
 Route::post('login', [App\Http\Controllers\UserController::class, 'loginUser'])->name('login');
+
+Route::get('get-products', function() {
+    return Producto::all();
+});
