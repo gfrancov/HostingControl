@@ -19,6 +19,9 @@ use App\Models\Producto;
 Route::post('register', [App\Http\Controllers\UserController::class, 'registerUser'])->name('register');
 Route::post('login', [App\Http\Controllers\UserController::class, 'loginUser'])->name('login');
 
+// Products paths
 Route::get('get-products', function() {
     return Producto::all();
 });
+Route::get('lista-compra/{usuario?}',[App\Http\Controllers\CompraController::class, 'userCompra']);
+Route::get('lista-compra-mes/{usuario?}',[App\Http\Controllers\CompraController::class, 'userCompraMonth']);

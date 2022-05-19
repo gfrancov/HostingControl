@@ -39,6 +39,7 @@ class UserController extends Controller
             $login['token'] = $user->createToken('auth_token')->plainTextToken;
             $login['name'] = $user->name;
             $login['email'] = $user->email;
+            $login['id'] = $user->id;
 
             return response()->json([
                 'status' => 'success',
