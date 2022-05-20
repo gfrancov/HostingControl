@@ -31,7 +31,7 @@
             <div class="row">
               <div class="col-8">
                 <div class="numbers">
-                  <p class="text-sm mb-0 font-weight-bold">Total gastado:</p>
+                  <p class="text-sm mb-0 font-weight-bold">Total gastado</p>
                   <h5 class="font-weight-bolder mb-0">
                     {{ totalDinero }}€
                   </h5>
@@ -52,7 +52,7 @@
             <div class="row">
               <div class="col-8">
                 <div class="numbers">
-                  <p class="text-sm mb-0 font-weight-bold">Total comprado:</p>
+                  <p class="text-sm mb-0 font-weight-bold">Total comprado</p>
                   <h5 class="font-weight-bolder mb-0">
                     {{ totalProductos.length }}
                     <span class="text-sm text-secondary font-weight-normal">productos</span>
@@ -118,9 +118,9 @@
           <div class="card-header pb-0">
             <div class="row">
               <div class="col-lg-12 col-12">
-                <h6>Productes disponibles</h6>
+                <h6>Tus últimas compras</h6>
                 <p class="text-sm mb-0">
-                  Listado de los productos disponibles en Nebula.
+                  Listado de todos los productos adquiridos durante este último mes.
                 </p>
               </div>
             </div>
@@ -133,11 +133,11 @@
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Producto</th>
                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Fecha</th>
                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Cantidad</th>
-                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Precio</th>
+                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Coste</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let producto of totalProductos">
+                  <tr *ngFor="let producto of mesProductos">
                     <td>
                       <div class="d-flex px-2 py-1">
                         <div class="d-flex flex-column justify-content-center">
@@ -179,16 +179,10 @@
           <div class="col-lg-6">
             <ul class="nav nav-footer justify-content-center justify-content-lg-end">
               <li class="nav-item">
-                <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
+                <a href="https://blog.nebula.cat/" class="nav-link text-muted" target="_blank">Blog</a>
               </li>
               <li class="nav-item">
-                <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
+                <a href="https://nebula.cat/" class="nav-link pe-0 text-muted" target="_blank">Nebula</a>
               </li>
             </ul>
           </div>

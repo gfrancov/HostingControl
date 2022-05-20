@@ -25,3 +25,4 @@ Route::get('get-products', function() {
 });
 Route::get('lista-compra/{usuario?}',[App\Http\Controllers\CompraController::class, 'userCompra']);
 Route::get('lista-compra-mes/{usuario?}',[App\Http\Controllers\CompraController::class, 'userCompraMonth']);
+Route::post('comprar-producto',[App\Http\Controllers\CompraController::class, 'comprar']);

@@ -36,7 +36,6 @@ export class HomeComponent implements OnInit {
         this.totalProductos = res;
 
         res.forEach((producto: any) => {
-          console.log(producto);
           this.totalDinero += (parseInt(producto.price) * parseInt(producto.cantidad) );
           producto.created_at = producto.created_at.split("T")[0];
         });
@@ -50,10 +49,8 @@ export class HomeComponent implements OnInit {
         this.mesProductos = res;
 
         res.forEach((producto: any) => {
-          console.log(producto);
           this.mesDinero += (parseInt(producto.price) * parseInt(producto.cantidad) );
         });
-
 
       }
     );

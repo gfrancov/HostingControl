@@ -15,6 +15,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './dashboard/home/home.component';
 import { ComprasComponent } from './dashboard/compras/compras.component';
+import { LogoutComponent } from './auth/logout/logout.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { ComprasComponent } from './dashboard/compras/compras.component';
     LoginComponent,
     DashboardComponent,
     HomeComponent,
-    ComprasComponent
+    ComprasComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import {formatDate} from '@angular/common';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-compras',
@@ -14,13 +16,9 @@ export class ComprasComponent implements OnInit {
     id: ''
   }
 
+  todayDate : any = formatDate(new Date(), 'dd/MM/yyyy', 'en');
   totalProductos : any;
-
-  totalDinero : number = 0;
-
-  mesProductos : any;
-
-  mesDinero : number = 0;
+  llistatProductes : any;
 
   constructor(private http: HttpClient) { }
 
@@ -36,8 +34,6 @@ export class ComprasComponent implements OnInit {
         this.totalProductos = res;
 
         res.forEach((producto: any) => {
-          console.log(producto);
-          this.totalDinero += (parseInt(producto.price) * parseInt(producto.cantidad) );
           producto.created_at = producto.created_at.split("T")[0];
         });
 
@@ -45,22 +41,68 @@ export class ComprasComponent implements OnInit {
       }
     );
 
-    this.http.get(`http://dev-api.nebula.cat/index.php/api/lista-compra-mes/${this.userData.id}`).subscribe(
+    this.http.get(`http://dev-api.nebula.cat/index.php/api/get-products`).subscribe(
       (res: any) => {
-        this.mesProductos = res;
 
         res.forEach((producto: any) => {
-          console.log(producto);
-          this.mesDinero += (parseInt(producto.price) * parseInt(producto.cantidad) );
+          producto.cantidad = 1;
         });
 
-
+        this.llistatProductes = res;
       }
     );
 
 
+  }
+
+  comprar(id : any, cantidad : any) {
+
+    let datosCompra = {
+      id: id,
+      quantity: cantidad,
+      user: this.userData.id
+    }
+
+    console.log(datosCompra);
+
+    this.http.post('http://dev-api.nebula.cat/index.php/api/comprar-producto', datosCompra).subscribe(
+
+      (res : any) => {
+        
+        if(res.status != 'success') {
+
+          Swal.fire({
+            position: 'center',
+            icon: 'error',
+            title: '¡Vaya!',
+            text: '¡No se ha podido comprar!',
+            showConfirmButton: true,
+            confirmButtonColor: '#f27474',
+            confirmButtonText: 'Volver',
+            timer: 5000
+          });
+
+        } else {
+
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Perfecto!',
+            text: 'Has comprado el producto correctamente!',
+            showConfirmButton: true,
+            confirmButtonColor: '#7ea966',
+            confirmButtonText: 'Seguir comprando'
+          }).then(function() {
+            window.location.href = "/compras";
+          });
+
+        }
+
+      }
 
 
+    )
+    
   }
 
 }

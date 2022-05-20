@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CompraRequest;
 use App\Models\Compra;
 
 class CompraController extends Controller
@@ -49,6 +50,24 @@ class CompraController extends Controller
         ->get();
 
         return response()->json($historial);
+
+    }
+
+    public function comprar(CompraRequest $request) {
+
+        $id = $request->input('id');
+        $quantity = $request->input('quantity');
+        $user = $request->input('user');
+
+        Compra::create([
+            'user' => $user,
+            'producto' => $id,
+            'cantidad' => $quantity,
+        ]);
+
+        return response()->json([
+            'status' => 'success'
+        ]);
 
     }
 }
